@@ -1,0 +1,32 @@
+# 1. Use Python 3.9
+FROM python:3.9
+
+# 2. Set environment variables
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PORT=7860
+
+# 3. Set the working directory
+WORKDIR /app
+
+# 4. Copy requirements from the nested folder
+COPY backend/stock/requirements.txt /app/requirements.txt
+
+# 5. Install dependencies
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
+
+# 6. Copy the backend code
+COPY backend/stock /app
+
+# 7. Create a non-root user (Hugging Face security requirement)
+RUN useradd -m -u 1000 user
+USER user
+ENV HOME=/home/user \
+    PATH=/home/user/.local/bin:$PATH
+
+# 8. Collect static files
+RUN python manage.py collectstatic --no-input
+
+# 9. Start Gunicorn on port 7860
+CMD ["gunicorn", "stock.wsgi:application", "--bind", "0.0.0.0:7860", "--workers", "1", "--timeout", "120"]
