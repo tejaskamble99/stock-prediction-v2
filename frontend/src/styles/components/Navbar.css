@@ -1,0 +1,135 @@
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #000000; /* Dark Background */
+  border-bottom: 1px solid #333;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.navbar-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-span {
+  color: #888; /* Subtle gray for the "+" */
+}
+
+/* Navigation Links (Desktop) */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-link {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+.nav-link.active {
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}
+
+/* Authentication Buttons */
+.auth-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-login {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-signup {
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-signup:hover {
+  background-color: #ddd;
+}
+
+/* Mobile Menu Icon (Hidden on Desktop) */
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* --- Mobile Responsiveness --- */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide links by default on mobile */
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 70px; /* Below the navbar */
+    left: 0;
+    background-color: #000;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid #333;
+  }
+
+  .nav-links.active {
+    display: flex; /* Show when active */
+  }
+
+  .auth-buttons {
+    display: none; /* Hide buttons on mobile for simplicity, or add to menu */
+  }
+
+  .menu-icon {
+    display: block; /* Show hamburger icon */
+  }
+}
+
+.btn-logout {
+  background-color: transparent;
+  color: #ff4d4d; /* Red color for logout */
+  border: 1px solid #ff4d4d;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+  background-color: #ff4d4d;
+  color: white;
+}

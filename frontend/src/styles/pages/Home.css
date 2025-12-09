@@ -1,0 +1,98 @@
+/* src/pages/Home.css */
+.home-container {
+  background-color: #000000;
+  color: white;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #888;
+  max-width: 600px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn-primary {
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+
+.btn-primary:hover {
+  background-color: #43a047;
+  transform: translateY(-3px);
+}
+
+.btn-secondary {
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  border: 2px solid #333;
+  border-radius: 50px;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Feature Cards Section */
+.features-grid {
+  display: flex;
+  gap: 30px;
+  margin-top: 80px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.feature-card {
+  background: #111;
+  padding: 30px;
+  border-radius: 15px;
+  width: 250px;
+  border: 1px solid #222;
+  transition: border-color 0.3s;
+}
+
+.feature-card:hover {
+  border-color: #4caf50;
+}
+
+.feature-card h3 {
+  margin-bottom: 10px;
+  color: #ddd;
+}
+
+.feature-card p {
+  color: #666;
+  font-size: 0.9rem;
+}
