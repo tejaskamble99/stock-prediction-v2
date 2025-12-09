@@ -151,5 +151,18 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_ALL_ORIGINS = True
+# 1. Allow this specific Vercel frontend to make requests
+CORS_ALLOWED_ORIGINS = [
+    "https://stock-prediction-v2-two.vercel.app",  # <--- YOUR LIVE URL
+    "http://localhost:5173",
+]
+
+# 2. Allow this frontend to send Login/Signup forms (Crucial!)
+CSRF_TRUSTED_ORIGINS = [
+    "https://stock-prediction-v2-two.vercel.app",  # <--- YOUR LIVE URL
+]
+
+# 3. Standard Allow Credentials
+CORS_ALLOW_CREDENTIALS = True
 
 
